@@ -1,5 +1,11 @@
 WeddingApp::Application.routes.draw do
+    resources :staticpage
     resources :weddings
+    resources :users
+    resource :sessions, only: [:new, :create, :destroy]
+
+
+    # root 'weddings#index'
 
   # get "weddings/index"
   # get "weddings/show"

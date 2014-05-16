@@ -1,0 +1,10 @@
+<h1>Login</h1>
+<br>
+
+<%= form_for :session, :url => sessions_path do |u| %>
+	Email: <%= u.text_field :email %><br>
+	Password: <%= u.password_field :password %><br>
+	<%= u.submit "Login" %>
+<% end %>
+
+<% params %>

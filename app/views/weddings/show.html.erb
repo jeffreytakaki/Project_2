@@ -1,2 +1,10 @@
 <h1>Weddings#show</h1>
 <p>Find me in app/views/weddings/show.html.erb</p>
+
+<ol>
+	<% @wedding.each do |w| %>
+	  <li><%= w.name %></li>
+	  <li><%= w.email %></li>
+	  <li><%= w.attendance %></li>
+	<% end %>
+</ol>
