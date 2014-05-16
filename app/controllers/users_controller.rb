@@ -12,9 +12,11 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			flash[:success] = "Thank you for signing up!"
+			session[:remember_token] = @user.id
+			@current_user = @user
 			redirect_to users_path
 		else
-			render 'new'
+			render :new
 		end	
 	end
 

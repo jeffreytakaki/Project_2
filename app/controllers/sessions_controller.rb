@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 			flash[:error] = "Please try logging in again"
 			render 'new'
 		else
-			session[:token] = @user.id
+			session[:remember_token] = @user.id
 			@current_user = @user
       		redirect_to users_path
 		end
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session.delete(:remember_token)
-    	redirect_to root_path
+    	redirect_to weddings_path
 	end
 
 end

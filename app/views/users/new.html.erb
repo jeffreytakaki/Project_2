@@ -1,7 +1,15 @@
 <h1>New User/Login</h1>
 
-<%= render 'form' %>
 
-<h1>Have an account? Sign in</h1>
-
-<p><button id="rsvpbutton" type="button"><%= link_to "Log In", new_sessions_path %></button></p>
+<div class = "textwindow">
+	<%= form_for @user do |u| %>
+		Name: <%= u.text_field :name %><br>
+		Email: <%= u.text_field :email %>
+		<br>
+		Password: <%= u.text_field :password %>
+		<br>
+		Phone Number: <%= u.text_field :phoneNum %><br>
+		Attending? <%= u.check_box :attendance %><br><br>
+		<%= u.submit %>
+	<% end %>
+</div>
