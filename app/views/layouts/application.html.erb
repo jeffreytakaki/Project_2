@@ -25,14 +25,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "HOME", weddings_path %></li>
-        <li><%= link_to "WEDDING GUESTS", users_path %></li>
+        <% if !current_user %>
+          <li><%= link_to "HOME", weddings_path %></li>
+        <% else %>
+          <li><%= link_to "HOME", weddings_path %></li> 
+          <li><%= link_to "WEDDING GUESTS", users_path %></li>
+         <% end %>  
       </ul> 
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %>
           <li><%= link_to "Sign Up", new_user_path %></li>
           <li><%= link_to "Sign In", new_sessions_path %></li>
-        <% else %>  
+        <% else %>
+
           <li><%= link_to "Sign Out", sessions_path, :method => :delete %></li>
         <% end %>
       </ul>
