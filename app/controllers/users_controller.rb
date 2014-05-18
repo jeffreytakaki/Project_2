@@ -42,10 +42,16 @@ class UsersController < ApplicationController
 		redirect_to users_path
 	end
 
+	def message
+	@message = User.find(params[:id])
+
+	end
+
+
 
 	protected
 
 	def user_params
-    	params.require(:user).permit(:email, :password, :name, :attendance)
+    	params.require(:user).permit(:email, :password, :name, :attendance, :message, :phoneNum)
   	end
 end

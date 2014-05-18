@@ -8,4 +8,15 @@
 
 body {
 	padding-top: 50px;
+	background: url('../images/image1.jpg');
+}
+
+.imagediv {
+	background-image: url('../assets/images/image1.jpg');
+}
+
+.messageboard {
+	height: 100%;
+	width: 50%;
+	background-color: rgba(153,255,255,.5);
 }

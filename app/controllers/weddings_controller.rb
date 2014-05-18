@@ -25,6 +25,10 @@ class WeddingsController < ApplicationController
     redirect_to weddings_path
   end
 
+  def weddingmessage
+    @wedding = Wedding.find(params[:id])
+  end
+
   def destroy
   end
 end
