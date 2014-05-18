@@ -6,5 +6,5 @@ class Wedding
   # field :partyNum, type: Integer
   field :message, type: String
 
-  belongs_to :users
+  # belongs_to :users
 end

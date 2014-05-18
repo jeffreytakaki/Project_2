@@ -9,7 +9,7 @@ class User
   field :message, type: String
   field :password_digest, type: String
 
-  has_many :weddings
+  # has_many :weddings
 
   def password
   	@password
