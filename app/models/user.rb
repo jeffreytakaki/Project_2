@@ -9,6 +9,12 @@ class User
   field :message, type: String
   field :password_digest, type: String
 
+
+  validates :name, presence: true
+  validates_length_of :message, minimum: 5, maximum: 9999
+  validates :email, presence: true
+  validates_length_of :phoneNum, minimum: 10, maximum: 10
+
   has_many :person1s, class_name: "Wedding", inverse_of: :person1
   has_many :person2s, class_name: "Wedding", inverse_of: :person2
   belongs_to :wedding2, class_name: "Wedding", inverse_of: :attendees
