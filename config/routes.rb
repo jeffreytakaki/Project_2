@@ -2,6 +2,7 @@ WeddingApp::Application.routes.draw do
     resources :staticpage
     resources :weddings
     resources :users
+    
     resource :sessions, only: [:new, :create, :destroy]
 
 

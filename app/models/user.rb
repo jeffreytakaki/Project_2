@@ -9,7 +9,9 @@ class User
   field :message, type: String
   field :password_digest, type: String
 
-  # has_many :weddings
+  has_many :person1s, class_name: "Wedding", inverse_of: :person1
+  has_many :person2s, class_name: "Wedding", inverse_of: :person2
+  belongs_to :wedding2, class_name: "Wedding", inverse_of: :attendees
 
   def password
   	@password

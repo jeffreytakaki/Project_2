@@ -1,10 +1,9 @@
 class Wedding
   include Mongoid::Document
-  # field :name, type: String
-  # field :email, type: String
-  # field :phoneNum, type: String
-  # field :partyNum, type: Integer
-  field :message, type: String
 
-  # belongs_to :users
+    belongs_to :person1, class_name: "User", inverse_of: :person1s
+	belongs_to :person2, class_name: "User", inverse_of: :person2s
+	has_many :attendees, class_name: "User", inverse_of: :wedding2
 end
+
+

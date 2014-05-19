@@ -5,11 +5,26 @@
   <br>
  <p><button id="rsvpbutton" type="button"><%= link_to "RSVP", new_user_path %></button></p>
 </div>
-<div class = "imagediv">
-	<div class = "messageboard">
-	</div>
+<div class = "upperdiv">
 
+	<div class = "messageboard">
+		<h2>Wedding Board</h2>
+		<br>
+
+		<% User.each do |x| %>
+			<% if x.message %>
+			<%= x.name + " - " %>
+			<%= x.message %><br>
+			<% end %>
+		<% end %>
+		<br>
+	</div>
 </div>
+<div class = "bottomdiv">
+</div>
+	
+
+
 
 
 
